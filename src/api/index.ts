@@ -9,6 +9,16 @@ export function login(data: Login) {
   });
 }
 
+export function logout(accessToken: string) {
+  return request({
+    url: 'logout',
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+}
+
 export function getUserInfo(accessToken: string) {
   return request({
     url: 'user',

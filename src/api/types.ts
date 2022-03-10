@@ -7,6 +7,10 @@ export interface LoginSuccess {
   accessToken: string;
 }
 
+export interface LogoutSuccess {
+  lastConnectedAt: Date;
+}
+
 export interface UserInfoSuccess {
   name: string;
   email: string;
