@@ -13,8 +13,8 @@ function LogIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const navigate = useNavigate();
   const { mutate, isLoading, isError, error, data } = useFetchMutation<LoginSuccess>(() => login({ email, password }));
+  const navigate = useNavigate();
 
   const emailInput = useRef<HTMLInputElement>(null);
   const passwordInput = useRef<HTMLInputElement>(null);

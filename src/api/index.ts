@@ -8,3 +8,12 @@ export function login(data: Login) {
     data,
   });
 }
+
+export function getUserInfo(accessToken: string) {
+  return request({
+    url: 'user',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+}

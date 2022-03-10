@@ -1,18 +1,21 @@
 import { Avatar, Card } from 'antd';
 import Meta from 'antd/lib/card/Meta';
+import { UserInfoSuccess } from '../../api/types';
 
 import Button from '../auth/common/Button';
 
-function Info() {
+interface UserInfoProps {
+  userInfo: UserInfoSuccess | null;
+  isLoading?: boolean;
+}
+
+function Info({ userInfo, isLoading }: UserInfoProps) {
   return (
-    <Card
-      cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-      actions={[<Button key="logOut">LogOut</Button>]}
-    >
+    <Card actions={[<Button key="logOut">LogOut</Button>]} loading={isLoading}>
       <Meta
-        avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-        title="Card title"
-        description="This is the description"
+        avatar={<Avatar size={64} src={userInfo?.profileImage} alt="profileImage" />}
+        title={userInfo?.name}
+        description={userInfo?.email}
       />
     </Card>
   );

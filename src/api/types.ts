@@ -6,3 +6,10 @@ export interface Login {
 export interface LoginSuccess {
   accessToken: string;
 }
+
+export interface UserInfoSuccess {
+  name: string;
+  email: string;
+  profileImage: string;
+  lastConnectedAt: Date;
+}
