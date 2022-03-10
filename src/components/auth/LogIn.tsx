@@ -7,6 +7,7 @@ import { LoginSuccess } from '../../api/types';
 import useFetchMutation from '../../hooks/useFetchMutation';
 
 import Input from './common/Input';
+import Button from './common/Button';
 
 function LogIn() {
   const [email, setEmail] = useState('');
@@ -77,17 +78,7 @@ function LogIn() {
       </div>
 
       <div>
-        <button
-          type="submit"
-          className="relative w-full py-2 px-4 rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-        >
-          Log in
-          {isLoading && (
-            <span className="absolute right-0 mx-3">
-              <Spin className="h-5 w-5" aria-hidden="true" />
-            </span>
-          )}
-        </button>
+        <Button isLoading={isLoading}>Log in</Button>
       </div>
     </form>
   );
