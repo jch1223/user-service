@@ -1,5 +1,5 @@
 import Login from '../components/auth/LogIn';
-import Layout from './Layout';
+import Layout from './layout';
 
 function Home() {
   return (

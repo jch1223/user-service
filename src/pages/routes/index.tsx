@@ -1,9 +1,9 @@
 import { Routes as ReactRouterRoutes, Route } from 'react-router-dom';
 
-import HomePage from './HomePage';
-import UserInfoPage from './UserInfoPage';
-import SettingPage from './SettingPage';
-import NotFoundPage from './NotFoundPage';
+import HomePage from '../HomePage';
+import UserInfoPage from '../UserInfoPage';
+import SettingPage from '../SettingPage';
+import NotFoundPage from '../NotFoundPage';
 
 export const Routes = () => {
   return (

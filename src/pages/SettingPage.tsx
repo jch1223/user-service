@@ -1,4 +1,4 @@
-import Layout from './Layout';
+import Layout from './layout';
 
 function SettingPage() {
   return <Layout title={'Setting'}>setting</Layout>;
