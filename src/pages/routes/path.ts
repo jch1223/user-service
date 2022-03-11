@@ -7,5 +7,8 @@ export const paths = {
   },
   setting: {
     path: '/setting',
+    verificationAuthCode: {
+      path: '/setting/verification-auth-code',
+    },
   },
 };

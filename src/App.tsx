@@ -1,11 +1,14 @@
 import { BrowserRouter as Router } from 'react-router-dom';
+import SettingProvider from './components/app/SettingContext';
 
 import { Routes } from './pages/routes';
 
 export default function App() {
   return (
-    <Router>
-      <Routes />
-    </Router>
+    <SettingProvider>
+      <Router>
+        <Routes />
+      </Router>
+    </SettingProvider>
   );
 }

@@ -22,3 +22,12 @@ export interface RequestVerificationCodeSuccess {
   issueToken: string;
   remainMillisecond: number;
 }
+
+export interface CheckAuthCode {
+  email: String;
+  authCode: String;
+  issueToken: String;
+}
+export interface CheckAuthCodeSuccess {
+  confirmToken: string;
+}

@@ -1,5 +1,5 @@
 import request from './request';
-import { Login } from './types';
+import { CheckAuthCode, Login } from './types';
 
 export function login(data: Login) {
   return request({
@@ -31,5 +31,13 @@ export function getUserInfo(accessToken: string) {
 export function requestVerificationCode(email: string) {
   return request({
     url: `reset-password?email=${email}`,
+  });
+}
+
+export function checkAuthCode(data: CheckAuthCode) {
+  return request({
+    url: 'reset-password',
+    method: 'POST',
+    data,
   });
 }
