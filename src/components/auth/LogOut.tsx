@@ -30,7 +30,7 @@ function LogOut() {
   }, [navigate, data]);
 
   return (
-    <Button isLoading={isLoading} onClick={() => mutate()}>
+    <Button className="bg-white text-red-500 py-0" isLoading={isLoading} onClick={() => mutate()}>
       LogOut
     </Button>
   );

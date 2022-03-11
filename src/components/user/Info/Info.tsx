@@ -1,8 +1,10 @@
 import { Avatar, Card } from 'antd';
 import Meta from 'antd/lib/card/Meta';
-import { UserInfoSuccess } from '../../api/types';
 
-import LogOut from '../auth/LogOut';
+import { UserInfoSuccess } from '../../../api/types';
+
+import LogOut from '../../auth/LogOut';
+import ChangePassword from './ChangePassword';
 
 interface UserInfoProps {
   userInfo: UserInfoSuccess | null;
@@ -11,7 +13,7 @@ interface UserInfoProps {
 
 function Info({ userInfo, isLoading }: UserInfoProps) {
   return (
-    <Card actions={[<LogOut key="logOut" />]} loading={isLoading}>
+    <Card actions={[<LogOut key="logOut" />, <ChangePassword key="setting" />]} loading={isLoading}>
       <Meta
         avatar={<Avatar size={64} src={userInfo?.profileImage} alt="profileImage" />}
         title={userInfo?.name}

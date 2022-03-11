@@ -6,7 +6,7 @@ import { UserInfoSuccess } from '../api/types';
 import useFetch from '../hooks/useFetch';
 
 import Layout from './Layout';
-import Info from '../components/user/Info';
+import Info from '../components/user/Info/Info';
 
 function UserInfoPage() {
   const accessToken = localStorage.getItem('accessToken');
