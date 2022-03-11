@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { message } from 'antd';
 
 import { logout } from '../../api';
@@ -6,7 +7,8 @@ import { LogoutSuccess } from '../../api/types';
 import useFetchMutation from '../../hooks/useFetchMutation';
 
 import Button from './common/Button';
-import { useNavigate } from 'react-router-dom';
+
+import { paths } from '../../pages/routes/path';
 
 function LogOut() {
   const accessToken = localStorage.getItem('accessToken');
@@ -25,7 +27,7 @@ function LogOut() {
   useEffect(() => {
     if (data) {
       localStorage.setItem('accessToken', '');
-      navigate('/');
+      navigate(paths.home.path);
     }
   }, [navigate, data]);
 

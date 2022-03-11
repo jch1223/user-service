@@ -8,6 +8,8 @@ import useFetch from '../hooks/useFetch';
 import Layout from './layout';
 import Info from '../components/user/Info';
 
+import { paths } from './routes/path';
+
 function UserInfoPage() {
   const accessToken = localStorage.getItem('accessToken');
 
@@ -16,7 +18,7 @@ function UserInfoPage() {
 
   useEffect(() => {
     if (isError) {
-      navigate('/');
+      navigate(paths.home.path);
     }
   }, [navigate, isError]);
 

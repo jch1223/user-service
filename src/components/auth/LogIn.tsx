@@ -1,6 +1,6 @@
 import { FormEventHandler, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { message, Spin } from 'antd';
+import { message } from 'antd';
 
 import { login } from '../../api';
 import { LoginSuccess } from '../../api/types';
@@ -8,6 +8,8 @@ import useFetchMutation from '../../hooks/useFetchMutation';
 
 import Input from './common/Input';
 import Button from './common/Button';
+
+import { paths } from '../../pages/routes/path';
 
 function LogIn() {
   const [email, setEmail] = useState('');
@@ -35,7 +37,7 @@ function LogIn() {
   useEffect(() => {
     if (data) {
       localStorage.setItem('accessToken', data.accessToken);
-      navigate('/user-info');
+      navigate(paths.userInfo.path);
     }
   }, [navigate, data]);
 
