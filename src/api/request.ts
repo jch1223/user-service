@@ -22,11 +22,12 @@ export default async function request(params: RequestOptions) {
   }
 
   const response = await fetch(url, options);
-  const result = await response.json();
+  const data = await response.text();
+  const result = data === '' ? {} : JSON.parse(data);
 
   if (!response.ok) {
     throw new Error(result.error.message);
   }
 
-  return await result;
+  return result;
 }

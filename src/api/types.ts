@@ -31,3 +31,14 @@ export interface CheckAuthCode {
 export interface CheckAuthCodeSuccess {
   confirmToken: string;
 }
+
+export interface ChangePassword {
+  email: String;
+  confirmToken: String;
+  newPassword: String;
+  newPasswordConfirm: String;
+}
+
+export interface ChangePasswordSuccess {
+  email: string;
+}

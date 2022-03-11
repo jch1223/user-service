@@ -4,10 +4,11 @@ import HomePage from '../HomePage';
 import UserInfoPage from '../UserInfoPage';
 import SettingPage from '../setting/SettingPage';
 import IssuanceAuthCode from '../../components/setting/IssuanceAuthCode';
+import VerificationAuthCode from '../../components/setting/VerificationAuthCode';
+import ChangePassword from '../../components/setting/ChangePassword';
 import NotFoundPage from '../NotFoundPage';
 
 import { paths } from './path';
-import VerificationAuthCode from '../../components/setting/VerificationAuthCode';
 
 export const Routes = () => {
   return (
@@ -17,6 +18,7 @@ export const Routes = () => {
       <Route path={paths.setting.path} element={<SettingPage />}>
         <Route index element={<IssuanceAuthCode />} />
         <Route path={paths.setting.verificationAuthCode.path} element={<VerificationAuthCode />} />
+        <Route path={paths.setting.changePassword.path} element={<ChangePassword />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </ReactRouterRoutes>

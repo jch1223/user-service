@@ -10,5 +10,8 @@ export const paths = {
     verificationAuthCode: {
       path: '/setting/verification-auth-code',
     },
+    changePassword: {
+      path: '/setting/change-password',
+    },
   },
 };
