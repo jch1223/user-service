@@ -17,3 +17,8 @@ export interface UserInfoSuccess {
   profileImage: string;
   lastConnectedAt: Date;
 }
+
+export interface RequestVerificationCodeSuccess {
+  issueToken: string;
+  remainMillisecond: number;
+}

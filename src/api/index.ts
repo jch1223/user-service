@@ -27,3 +27,9 @@ export function getUserInfo(accessToken: string) {
     },
   });
 }
+
+export function requestVerificationCode(email: string) {
+  return request({
+    url: `reset-password?email=${email}`,
+  });
+}

@@ -6,8 +6,8 @@ import { login } from '../../api';
 import { LoginSuccess } from '../../api/types';
 import useFetchMutation from '../../hooks/useFetchMutation';
 
-import Input from './common/Input';
-import Button from './common/Button';
+import Input from '../common/Input';
+import Button from '../common/Button';
 
 import { paths } from '../../pages/routes/path';
 

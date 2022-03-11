@@ -6,7 +6,7 @@ import { UserInfoSuccess } from '../api/types';
 import useFetch from '../hooks/useFetch';
 
 import Layout from './layout';
-import Info from '../components/user/Info';
+import Info from '../components/user/info';
 
 import { paths } from './routes/path';
 

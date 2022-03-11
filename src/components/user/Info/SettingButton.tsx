@@ -4,7 +4,7 @@ import { Tooltip } from 'antd';
 
 import { paths } from '../../../pages/routes/path';
 
-function ChangePassword() {
+function SettingButton() {
   return (
     <Tooltip title="change password" arrowPointAtCenter>
       <Link to={paths.setting.path}>
@@ -14,4 +14,4 @@ function ChangePassword() {
   );
 }
 
-export default ChangePassword;
+export default SettingButton;
