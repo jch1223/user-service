@@ -14,7 +14,7 @@ import TimeCounter from './common/TimeCounter';
 
 function VerificationAuthCode() {
   const [authCode, setAuthCode] = useState('');
-  const { email, issueToken, remainMillisecond, setConfirmToken } = useSettingContext();
+  const { email, issueToken, remainMillisecond, setIssueToken, setConfirmToken } = useSettingContext();
   const { mutate, isLoading, isError, error, data } = useFetchMutation<CheckAuthCodeSuccess>(() =>
     checkAuthCode({ email, authCode, issueToken })
   );
@@ -37,9 +37,10 @@ function VerificationAuthCode() {
   useEffect(() => {
     if (data) {
       setConfirmToken(data.confirmToken);
-      // navigate(paths.setting.verificationAuthCode.path);
+      setIssueToken('');
+      navigate(paths.setting.changePassword.path);
     }
-  }, [navigate, setConfirmToken, data]);
+  }, [navigate, setConfirmToken, setIssueToken, data]);
 
   const authCodeSubmitHandler: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
@@ -62,7 +63,7 @@ function VerificationAuthCode() {
               value={authCode}
               onChange={e => setAuthCode(e.target.value)}
             />
-            <span className="absolute right-0 text-red-500 px-3 py-2">
+            <span className="absolute right-0 text-red-500 px-3 py-2 z-50">
               <TimeCounter millisecond={remainMillisecond} />
             </span>
           </div>

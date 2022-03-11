@@ -6,12 +6,16 @@ interface TimeCounterProps extends HTMLAttributes<HTMLSpanElement> {
 
 function TimeCounter({ millisecond, className }: TimeCounterProps) {
   const count = useRef(millisecond);
-  const [remain, setRemain] = useState(convertTime(millisecond));
+  const [timeRemaining, setTimeRemaining] = useState(convertTime(millisecond));
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       count.current = count.current - 1000;
-      setRemain(convertTime(count.current));
+      setTimeRemaining(convertTime(count.current));
+
+      if (count.current <= 0) {
+        clearInterval(intervalId);
+      }
     }, 1000);
 
     return () => {
@@ -19,7 +23,7 @@ function TimeCounter({ millisecond, className }: TimeCounterProps) {
     };
   }, []);
 
-  return <span className={className || ''}>{remain}</span>;
+  return <span className={className || ''}>{timeRemaining}</span>;
 }
 
 function convertTime(millisecond: number) {
