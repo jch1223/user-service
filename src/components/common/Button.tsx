@@ -15,7 +15,7 @@ function Button({ className, type, isLoading, onClick, children }: ButtonProps) 
       {children}
 
       {isLoading && (
-        <span className="absolute right-0 mx-3">
+        <span className="absolute right-0 mx-3" data-testid="spin">
           <Spin className="h-5 w-5" aria-hidden="true" />
         </span>
       )}
