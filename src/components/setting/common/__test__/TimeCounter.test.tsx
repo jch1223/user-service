@@ -2,7 +2,7 @@
 import { render, unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
 
-import TimeCounter from './TimeCounter';
+import TimeCounter from '../TimeCounter';
 
 describe('TimeCounter Test', () => {
   let container: null | Element = null;
