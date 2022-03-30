@@ -10,7 +10,7 @@ import useFetchMutation from '../../hooks/useFetchMutation';
 import { paths } from '../../pages/routes/path';
 import Button from '../common/Button';
 import Input from '../common/Input';
-import TimeCounter from './common/TimeCounter';
+import TimeCounter from '../common/TimeCounter';
 
 function VerificationAuthCode() {
   const [authCode, setAuthCode] = useState('');
